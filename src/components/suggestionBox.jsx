@@ -27,7 +27,7 @@ function suggestionBox({addSuggestion}) {
             <div className="flex content-center items-center gap-3">
                 <textarea
                     placeholder="Enter your suggestion here..."
-                    className="rounded bg-gray-500 text-white resize-none w-xl h-32"
+                    className="rounded bg-gray-500 text-white resize-none w-xl h-32 p-1"
                     value={text}
                     maxLength="200"
                     required
@@ -36,7 +36,7 @@ function suggestionBox({addSuggestion}) {
                 />
                 <textarea
                     placeholder="Student ID"
-                    className="rounded bg-gray-500 text-white resize-none max-h-10 overflow-y-hidden content-center"
+                    className="rounded bg-gray-500 text-white resize-none max-h-10 overflow-y-hidden content-center p-1"
                     value={studentID}
                     maxLength="9"
                     required

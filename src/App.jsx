@@ -11,7 +11,8 @@ function App() {
   };
   return (
     <div className="max-w-2xl min-h-screen rounded-lg mx-auto mt-10 p-6">
-      <p className="text-3xl">Suggestion box</p>
+      <p className="text-4xl border-b border-white pb-3">Suggestion box</p>
+      <p className="text-xl pt-2">Submit your suggestions for future club meetings here!</p>
       <SuggestionBox addSuggestion={addSuggestion} />
     </div>
   );
