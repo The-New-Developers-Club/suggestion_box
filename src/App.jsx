@@ -5,6 +5,7 @@ import SuggestionList from "./components/suggestionList";
 
 function App() {
   const [suggestions, setSuggestions] = useState([]);
+  
 
   const addSuggestion = (newSuggestion) => {
     setSuggestions([...suggestions, newSuggestion]);

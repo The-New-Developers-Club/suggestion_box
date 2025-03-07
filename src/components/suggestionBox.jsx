@@ -21,9 +21,27 @@ function suggestionBox({addSuggestion}) {
     const handleIDChange = (event) => {
         setStudentID(event.target.value);
     }
+
+    const submitSuggestion = async () => {
+        const response = await fetch('http://localhost:5000/submit-suggestion', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ student_number: studentID, suggestion: text }),
+        });
+    
+        const data = await response.json();
+        console.log(data);
+        if (text.trim()){
+            addSuggestion({text, votes: 0});
+            setText("");
+            setStudentID("");
+            setCount(0);
+        }
+    };
+    
   
     return (
-        <form onSubmit={handleSubmit} className="rounded-lg flex flex-col gap-2 p-4 text-white">
+        <form onSubmit={submitSuggestion} className="rounded-lg flex flex-col gap-2 p-4 text-white">
             <div className="flex content-center items-center gap-3">
                 <textarea
                     placeholder="Enter your suggestion here..."
